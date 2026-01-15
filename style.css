@@ -1,0 +1,108 @@
+:root {
+    --bg: #0f172a;
+    --accent: #38bdf8;
+    --card-white: #ffffff;
+    --danger: #ef4444;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body, html {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden; 
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+}
+
+.app-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.view {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background: var(--bg);
+    z-index: 1;
+}
+
+/* This class is removed/added by JavaScript */
+.hidden { display: none !important; }
+
+#home-view {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* Using your uploaded image */
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('1758272510266.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.home-content { max-width: 600px; color: white; }
+.highlight { color: var(--accent); }
+h1 { font-size: clamp(2rem, 8vw, 3.5rem); font-weight: 800; margin-bottom: 1rem; }
+
+.cta-btn { 
+    background: var(--accent); 
+    padding: 15px 35px; 
+    border: none; 
+    border-radius: 50px; 
+    font-weight: 800; 
+    cursor: pointer; 
+    transition: 0.3s;
+}
+
+/* Directory/Form Styles */
+.view-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.scroll-area { flex: 1; overflow-y: auto; }
+.employee-list { max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
+
+.employee-card {
+    background: white;
+    color: #333;
+    padding: 15px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.card-img { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent); }
+
+.form-card {
+    background: white;
+    margin: auto;
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 400px;
+    color: #333;
+    text-align: center;
+}
+
+.image-preview {
+    width: 100px; height: 100px; border-radius: 50%; border: 2px dashed var(--accent);
+    margin: 0 auto 10px; display: flex; align-items: center; justify-content: center; overflow: hidden;
+}
+.image-preview img { width: 100%; height: 100%; object-fit: cover; }
+
+.input-group input { width: 100%; padding: 12px; margin-bottom: 12px; border: 1px solid #ddd; border-radius: 8px; }
+.submit-btn { width: 100%; padding: 14px; background: var(--bg); color: white; border: none; border-radius: 10px; cursor: pointer; }
+.add-btn { background: var(--accent); border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; }
+.nav-btn { background: none; border: none; color: var(--accent); cursor: pointer; }
+.del-btn { background: #fee2e2; color: var(--danger); border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer; }
+
+/* Responsive */
+@media (max-width: 600px) {
+    .employee-card { flex-direction: column; text-align: center; }
+}

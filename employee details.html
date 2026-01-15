@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexGen HR Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <section id="home-view" class="view">
+            <div class="home-content">
+                <div class="badge">EST. 2026</div>
+                <h1>NexGen <span class="highlight">Solutions</span></h1>
+                <p>Innovative team management at your fingertips. Access the directory to manage your global workforce.</p>
+                <button class="cta-btn" onclick="showView('dashboard-view')">VIEW EMPLOYEE DIRECTORY</button>
+            </div>
+        </section>
+
+        <section id="dashboard-view" class="view hidden">
+            <header class="view-header">
+                <button class="nav-btn" onclick="showView('home-view')">← BACK TO HOME</button>
+                <button class="add-btn" onclick="showView('form-view')">+ ADD EMPLOYEE</button>
+            </header>
+            <h2 class="view-title">Team Directory</h2>
+            <div class="scroll-area">
+                <div class="employee-list" id="employee-list">
+                    </div>
+            </div>
+        </section>
+
+        <section id="form-view" class="view hidden">
+            <header class="view-header">
+                <button class="nav-btn" onclick="showView('dashboard-view')">← CANCEL</button>
+            </header>
+            <div class="form-card">
+                <h2>Registration</h2>
+                
+                <div class="upload-zone" onclick="document.getElementById('imageUpload').click()">
+                    <div class="image-preview" id="imagePreview">
+                        <span id="preview-text">UPLOAD IMAGE</span>
+                    </div>
+                    <p class="upload-hint">Click circle to select photo</p>
+                    <input type="file" id="imageUpload" accept="image/*" hidden>
+                </div>
+
+                <div class="input-group">
+                    <input type="text" id="empName" placeholder="NAME">
+                    <input type="email" id="empEmail" placeholder="EMAIL ADDRESS">
+                    <input type="tel" id="empNumber" placeholder="PHONE NUMBER">
+                    <button class="submit-btn" onclick="addEmployee()">SAVE TO DIRECTORY</button>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
